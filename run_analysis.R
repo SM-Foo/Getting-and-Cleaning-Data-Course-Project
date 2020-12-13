@@ -69,5 +69,6 @@ subTidyDF1 <- select(tidyDF, selectList)                                  # dim:
 subTidyDF2 <- aggregate(. ~ subjectID + activityType, subTidyDF1, mean)    # dim: 180 x 68
 subTidyDF2 <- subTidyDF2[order(subTidyDF2$subjectID, subTidyDF2$activityType),]
 
-
+### Save subTidyDF2 dataset to local file - for submission
+write.table(subTidyDF2, file = "subTidyDF2.txt", row.name = FALSE)
 
